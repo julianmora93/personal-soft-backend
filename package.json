@@ -1,0 +1,40 @@
+{
+  "name": "personal-soft-test-backend",
+  "version": "1.0.0",
+  "description": "personal-soft-test-backend app",
+  "scripts": {
+    "start:function": "serverless invoke local --function product-get-all",
+    "start:dev": "serverless dev",
+    "deploy": "serverless deploy"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.145",
+    "@types/mysql": "^2.15.26",
+    "serverless-plugin-typescript": "^2.1.5",
+    "typescript": "^5.5.4",
+    "uuid": "^8.3.2",
+    "validate.js": "^0.13.1"
+  },
+  "dependencies": {
+    "@aws-sdk/client-cognito-identity": "^3.637.0",
+    "@serverless/typescript": "^3.38.0",
+    "@types/node": "^20.11.20",
+    "@typescript-eslint/eslint-plugin": "^7.0.2",
+    "@typescript-eslint/parser": "^7.0.2",
+    "amazon-cognito-identity-js": "^6.3.12",
+    "aws-sdk": "^2.1685.0",
+    "esbuild": "^0.20.1",
+    "eslint": "^8.57.0",
+    "mysql": "^2.18.1",
+    "npm-run-all": "^4.1.5",
+    "serverless": "^3.38.0",
+    "serverless-api-gateway-throttling": "^2.0.3",
+    "serverless-dynamodb": "^0.2.50",
+    "serverless-esbuild": "^1.51.0",
+    "serverless-offline": "^13.3.3",
+    "serverless-plugin-aws-alerts": "^1.7.5",
+    "source-map-support": "^0.5.21",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}

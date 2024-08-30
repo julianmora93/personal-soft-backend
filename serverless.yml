@@ -1,0 +1,52 @@
+org: mocatech
+app: personal-soft-test-backend-api
+service: personal-soft-test-backend
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: 'us-east-1'
+
+functions:
+  user-signin:
+    handler: src/functions/user/singin.handler
+    environment: 
+      ENV_CLIENT_ID: ${file(env.json):ENV_CLIENT_ID}
+      ENV_USER_POOL_ID: ${file(env.json):ENV_USER_POOL_ID}
+    events:
+      - httpApi:
+          method: post
+          path: /user-signin
+  get-all-product:
+    handler: src/functions/inventory/get-all-products.handler
+    environment: 
+      ENV_DB_HOST: ${file(env.json):ENV_DB_HOST}
+      ENV_DB_USER: ${file(env.json):ENV_DB_USER}
+      ENV_DB_PASSWORD: ${file(env.json):ENV_DB_PASSWORD}
+      ENV_DB_DATA_BASE: ${file(env.json):ENV_DB_DATA_BASE}
+    events:
+      - httpApi:
+          method: get
+          path: /product
+  get-all-inventory-movements:
+    handler: src/functions/inventory/get-all-movements.handler
+    environment: 
+      ENV_DB_HOST: ${file(env.json):ENV_DB_HOST}
+      ENV_DB_USER: ${file(env.json):ENV_DB_USER}
+      ENV_DB_PASSWORD: ${file(env.json):ENV_DB_PASSWORD}
+      ENV_DB_DATA_BASE: ${file(env.json):ENV_DB_DATA_BASE}
+    events:
+      - httpApi:
+          method: get
+          path: /inventory-movements
+  new-movements:
+    handler: src/functions/inventory/new-movement.handler
+    environment: 
+      ENV_DB_HOST: ${file(env.json):ENV_DB_HOST}
+      ENV_DB_USER: ${file(env.json):ENV_DB_USER}
+      ENV_DB_PASSWORD: ${file(env.json):ENV_DB_PASSWORD}
+      ENV_DB_DATA_BASE: ${file(env.json):ENV_DB_DATA_BASE}
+    events:
+      - httpApi:
+          method: post
+          path: /new-movement
