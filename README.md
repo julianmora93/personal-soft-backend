@@ -70,28 +70,3 @@ When you are done developing, don't forget to run `serverless deploy` to deploy 
 
 
 
-```
-db configuration
-```
-
-
-
-RDS: database-test-aws
-Endpoint: database-test-aws.cn6qeq6ik72k.us-east-1.rds.amazonaws.com
-User: admin
-Password: usr-aws-test.*
-Db: inventory
-
-
-```
-user authentication
-```
-
-user_test_001@yopmail.com
-usR.1234*
-
-user_test_002@yopmail.com
-usR.1234*
-
-user_test_003@yopmail.com
-usR.1234*
